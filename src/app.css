@@ -1,0 +1,61 @@
+.code {
+    position: absolute;
+    top: 15px;
+    left: -12px;
+    font-size: 14px;
+    color: black;
+    font-weight: 600;
+}
+
+ul {
+    z-index: 0;
+    position: relative;
+    margin: 2rem 0;
+}
+
+li {
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    line-height: 2em;
+    border-radius: 1em;
+    background: white;
+    margin: 0 3em;
+    display: inline-block;
+    color: white;
+    position: relative;
+    border: 6px solid black;
+}
+
+li::before{
+    content: '';
+    position: absolute;
+    top: 0.2em;
+    left: -6.5em;
+    width: 7em;
+    height: 0.2em;
+    background: black;
+    z-index: -1;
+}
+
+
+li:first-child::before {
+  display: none;
+}
+
+.active {
+  background: darkred;
+  border: 6px solid darkred;
+}
+
+.active ~ li {
+    color: #8d8d8d;
+  background: #8d8d8d;
+  border: none;
+}
+
+.active ~ li::before {
+    background: repeating-linear-gradient(to right, rgba(0,0,0,0.5) 0,#8d8d8d33 11px, #8d8d8d 2px,#8d8d8d 10px);
+    top: 0.7em;
+    height: 0.1em;
+}
